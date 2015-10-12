@@ -8,5 +8,10 @@ namespace xgboost_dotnet
 {
     public class DMatrix
     {
+        public IntPtr Handle;
+        public DMatrix(string srcPath, int silent = 1)
+        {
+            XgBoostWrapper.CreateDMatrixFromFile(srcPath, silent);
+        }
     }
 }
